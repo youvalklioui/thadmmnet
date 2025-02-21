@@ -95,13 +95,15 @@ def main():
     if args.command == 'create-array':
         generate_dictionary(args.array_type, args.num_elements, args.aperture, args.dictionary_length)
     elif args.command == 'create-trainset': 
-        generate_dataset_train(args.path_cs_dictionary, args.num_measurement_vectors, args.max_number_sources, args.snr, args.min_freq_seperation_factor)
+        generate_dataset_train(args.dictionary_path, args.num_measurement_vectors, args.max_number_sources, args.snr, args.min_freq_seperation_factor)
     elif args.command == 'create-testset':
-        generate_dataset_test(args.cs_dictionary_path, args.snr_values, args.num_vectors_per_snr, args.max_number_sources, args.min_freq_seperation_factor)
+        generate_dataset_test(args.dictionary_path, args.snr_values, args.num_vectors_per_snr, args.max_number_sources, args.min_freq_seperation_factor)
     elif args.command == 'train-model':
-        train_model(args.model, args.num_layers, args.epochs, args.lr, args.batch_size, args.num_training_samples, args.load_checkpoint, args.device)
+        train_model(args.model, args.num_layers, args.dataset_train_path, args.epochs, args.lr, args.batch_size, args.num_training_samples, args.model_path, 
+                    args.load_latest_state, args.device)
     elif args.command == 'evaluate-model':
-        evaluate_model(args.model, args.num_layers, args.metric, args.bin_threshold, args.amp_threshold, args.return_degs, args.device)
+        evaluate_model(args.model, args.num_layers, args.dataset_test_path, args.model_path, args.load_latest_state, args.metric, args.bin_threshold, 
+                       args.amp_threshold, args.return_degs, args.device)
 
 if __name__ == '__main__':
     main() 
