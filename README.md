@@ -20,8 +20,8 @@ the experimental results.
 We first setup the repo and environment.
 
 ```sh
-git clone https://github.com/Youval-K/thadmm_net.git
-cd thadmm_net
+git clone https://github.com/youvalklioui/thadmmnet.git
+cd thadmmnet
 
 conda env create -f environment.yml
 conda activate thadmmnet_env
