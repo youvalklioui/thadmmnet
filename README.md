@@ -1,6 +1,6 @@
 # Toeplitz-Hermitian ADMM-Net for DoA Estimation
 
-This repository supplements the paper "Toeplitz-Hermitian ADMM-Net for DoA Estimation". THADMM-Net is a structured deep-unfolded model based on ADMM that makes use of Toeplitz-Hermitian as well as positive-semi definite (PSD) constraints on the learnable matrices. The model is shown to outperform Toeplitz-LISTA and Toeplitz-Hermitian-LISTA while requiring much less parameters.
+This repository supplements the [paper](https://arxiv.org/pdf/2502.13896) "Toeplitz-Hermitian ADMM-Net for DoA Estimation". THADMM-Net is a structured deep-unfolded model based on ADMM that makes use of Toeplitz-Hermitian as well as positive-semi definite (PSD) constraints on the learnable matrices. The model is shown to outperform Toeplitz-LISTA and Toeplitz-Hermitian-LISTA while requiring much less parameters.
 
 Below is a guided walkthrough to replicate
 the experimental results.
