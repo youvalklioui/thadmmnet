@@ -71,15 +71,15 @@ which will create a `dataset_test_8tgts_0to35dbsnr_3fres.pt` under the same dire
 
 ```sh
 python main.py train \
-    --model 'THADMM-Net',
-    --num_layers 15,
-    --dataset_train_path './datasets/sla/dataset_train_8tgts_15dbsnr_1fres.pt',
-    --epochs 30,
-    --lr 0.0001,
-    --batch_size 2048,
-    --num_training_samples 100000,
-    --model_path null,
-    --load_latest_state false,
+    --model 'THADMM-Net' \
+    --num_layers 15 \
+    --dataset_train_path './datasets/sla/dataset_train_8tgts_15dbsnr_1fres.pt' \
+    --epochs 30 \
+    --lr 0.0001 \
+    --batch_size 2048 \
+    --num_training_samples 100000 \
+    --model_path null \
+    --load_latest_state false \
     --device 'cuda'
 ```
 We use `--num_training_samples` to indicate the number of measurement vectors to be used from the training set for the training proper, the rest will be used for computing the validation loss. If there is an already saved model state, we can pass its path using `--model_path` to resume the training. The models currently supported are `'LISTA'`, `'TLISTA'`, `'THLISTA'`, `'ADMM-Net'` and `'THADMM-Net'`. Once through, the model state will then be saved under `./models/states/sla` and the training/validation loss is saved under `./outputs/losses/sla`. The models weights can be directly downloaded from [here](https://zenodo.org/records/14894119), and need to be placed in the `./models/states/sla` subdirectory.
